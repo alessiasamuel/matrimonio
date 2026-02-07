@@ -1,0 +1,265 @@
+/* Import font eleganti */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Lato:wght@300;400;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    background: linear-gradient(135deg, #C8A2C8 0%, #FF8C42 100%);
+    min-height: 100vh;
+}
+
+/* Palette */
+:root {
+    --lilla: #C8A2C8;
+    --arancione: #FF8C42;
+    --bianco: #FFFFFF;
+}
+
+/* Barra fissa */
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: var(--bianco);
+    border-bottom: 2px solid var(--lilla);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1000;
+}
+
+/* Logo */
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--lilla);
+}
+
+/* Menu */
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu button {
+    padding: 10px 15px;
+    border: none;
+    background: var(--lilla);
+    color: var(--bianco);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    white-space: nowrap;
+    transition: 0.2s;
+    font-family: 'Lato', sans-serif;
+}
+
+.menu button:hover {
+    background: var(--arancione);
+}
+
+/* Switch lingua */
+.lang-switch {
+    margin-left: 15px;
+    font-size: 14px;
+    cursor: pointer;
+    color: var(--arancione);
+    font-weight: bold;
+}
+
+/* Contenuto */
+.content {
+    margin-top: 100px;
+    text-align: center;
+    padding: 20px;
+}
+
+.content img {
+    max-width: 90%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* RSVP Page */
+.rsvp-container {
+    margin-top: 120px;
+    background: rgba(255,255,255,0.85);
+    padding: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.rsvp-container h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: var(--lilla);
+}
+
+.rsvp-container label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.rsvp-container input,
+.rsvp-container select,
+.rsvp-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.rsvp-container button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: var(--lilla);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.rsvp-container button:hover {
+    background: var(--arancione);
+}
+
+/* Responsività mobile */
+@media (max-width: 700px) {
+    .top-bar {
+        height: auto;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .menu button {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+
+    .lang-switch {
+        margin-top: 5px;
+    }
+}
+
+/* FOOTER ELEGANTE */
+footer {
+    margin-top: 60px;
+    background: rgba(255,255,255,0.85);
+    padding: 30px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: #5a3d5c;
+    border-top: 2px solid var(--lilla);
+}
+
+/* TIMELINE ANIMATA */
+.timeline {
+    max-width: 700px;
+    margin: 120px auto;
+    padding: 20px;
+    position: relative;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background: var(--lilla);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    width: 50%;
+    padding: 20px;
+    position: relative;
+    opacity: 0;
+    animation: fadeInUp 1s forwards;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    width: 18px;
+    height: 18px;
+    background: var(--arancione);
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 0 6px rgba(0,0,0,0.2);
+}
+
+.timeline-item:nth-child(odd)::before {
+    right: -9px;
+}
+
+.timeline-item:nth-child(even)::before {
+    left: -9px;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* GALLERIA FOTOGRAFICA */
+.gallery-container {
+    margin-top: 120px;
+    text-align: center;
+    color: white;
+}
+
+.gallery-container h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: transform 0.3s;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+}
