@@ -14,27 +14,35 @@
     <div class="logo">S&A</div>
 
     <div class="menu">
-        <button onclick="location.href='index.html'">Home</button>
-        <button onclick="location.href='programma.html'">Programma</button>
-        <button onclick="location.href='RSVP.html'">RSVP</button>
-        <button  onclick="location.href='regalo.html'">Regalo di Nozze</button>
+        <div onclick="location.href='index.html'">Home</div>
+        <div onclick="location.href='programma.html'">Programma</div>
+        <div onclick="location.href='RSVP.html'">RSVP</div>
+        <div  onclick="location.href='regalo.html'">Regalo di Nozze</div>
 
         <div class="lang-switch" onclick="switchLang('en')">IT | EN</div>
     </div>
+    <footer>
+        “L’amore non consiste nel guardarsi l’un l’altro,  
+        ma nel guardare insieme nella stessa direzione.”  
+        — Antoine de Saint‑Exupéry
+    </footer>
 </div>
 
 <!-- VERSIONE INGLESE -->
 <div class="top-bar" id="menu-en" style="display:none;">
     <div class="logo">S&A</div>
-
     <div class="menu">
-        <button onclick="location.href='index.html'">Home</button>
-        <button  onclick="location.href='schedule.html'>Schedule</button>
-        <button onclick="location.href='RSVP.html'">RSVP</button>
-        <button  onclick="location.href='gift.html'>Wedding Gift</button>
+        <div onclick="location.href='index.html'">Home</div>
+        <div onclick="location.href='programma.html'">Schedule</div>
+        <div onclick="location.href='RSVP.html'">RSVP</div>
+        <div  onclick="location.href='regalo.html'">Wedding Gift</div>
 
-        <div class="lang-switch" onclick="switchLang('it')">EN | IT</div>
+        <div class="lang-switch" onclick="switchLang('en')">IT | EN</div>
     </div>
+    <footer>
+        “Love does not consist in looking at each other, but in looking together in the same direction.”  
+        — Antoine de Saint‑Exupéry
+    </footer>
 </div>
 
 <!-- Contenuto -->
@@ -48,11 +56,7 @@ function switchLang(lang) {
     document.getElementById("menu-en").style.display = lang === "en" ? "flex" : "none";
 }
 </script>
-<footer>
-    “L’amore non consiste nel guardarsi l’un l’altro,  
-    ma nel guardare insieme nella stessa direzione.”  
-    — Antoine de Saint‑Exupéry
-</footer>
+
 
 </body>
 </html>
