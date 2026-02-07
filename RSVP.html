@@ -23,28 +23,62 @@
 <div class="rsvp-container">
     <h2>RSVP</h2>
 
-    <form action="mailto:tuamail@example.com" method="POST" enctype="text/plain">
+   <form id="rsvpForm">
         <label>Nome e Cognome</label>
-        <input type="text" name="Nome" required>
-
+        <input type="text" name="nome" required>
+    
         <label>Email</label>
-        <input type="email" name="Email" required>
-
+        <input type="email" name="email" required>
+    
         <label>Parteciperai?</label>
-        <select name="Presenza" required>
+        <select name="presenza" required>
             <option value="Si">Sì, sarò presente</option>
             <option value="No">No, non posso venire</option>
         </select>
-
+    
         <label>Numero di accompagnatori</label>
-        <input type="number" name="Accompagnatori" min="0" value="0">
-
+        <input type="number" name="accompagnatori" min="0" value="0">
+    
         <label>Note aggiuntive</label>
-        <textarea name="Note" rows="4"></textarea>
+        <textarea name="note" rows="4"></textarea>
 
         <button type="submit">Invia RSVP</button>
     </form>
+
+<div id="rsvpMessage" style="margin-top:20px; font-weight:bold;"></div>
+
 </div>
+<script>
+const scriptURL = "https://script.google.com/macros/s/AKfycbwxzgPnV9JNrN535OqHqp3sWwcdcd8On1bMrbY8ZQzHzdcAAtUuGRhQvw9BiPubCVVM/exec";
+
+document.getElementById("rsvpForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const formData = {
+        nome: this.nome.value,
+        email: this.email.value,
+        presenza: this.presenza.value,
+        accompagnatori: this.accompagnatori.value,
+        note: this.note.value
+    };
+
+    fetch(scriptURL, {
+        method: "POST",
+        body: JSON.stringify(formData)
+    })
+    .then(res => res.json())
+    .then(() => {
+        document.getElementById("rsvpMessage").innerHTML =
+            "Grazie! La tua conferma è stata registrata.";
+        document.getElementById("rsvpForm").reset();
+    })
+    .catch(err => {
+        document.getElementById("rsvpMessage").innerHTML =
+            "Si è verificato un errore. Riprova più tardi.";
+    });
+});
+</script>
+
 <footer> “Il vero amore inizia quando non ci si aspetta nulla in cambio.” </footer>
 </body>
 </html>
