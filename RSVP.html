@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RSVP – S&A</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="top-bar">
+    <div class="logo">S&A</div>
+
+    <div class="menu">
+        <button onclick="location.href='index.html'">Home</button>
+        <button>Programma</button>
+        <button onclick="location.href='rsvp.html'">RSVP</button>
+        <button>Regalo di Nozze</button>
+    </div>
+</div>
+
+<div class="rsvp-container">
+    <h2>RSVP</h2>
+
+    <form action="mailto:tuamail@example.com" method="POST" enctype="text/plain">
+        <label>Nome e Cognome</label>
+        <input type="text" name="Nome" required>
+
+        <label>Email</label>
+        <input type="email" name="Email" required>
+
+        <label>Parteciperai?</label>
+        <select name="Presenza" required>
+            <option value="Si">Sì, sarò presente</option>
+            <option value="No">No, non posso venire</option>
+        </select>
+
+        <label>Numero di accompagnatori</label>
+        <input type="number" name="Accompagnatori" min="0" value="0">
+
+        <label>Note aggiuntive</label>
+        <textarea name="Note" rows="4"></textarea>
+
+        <button type="submit">Invia RSVP</button>
+    </form>
+</div>
+<footer> “Il vero amore inizia quando non ci si aspetta nulla in cambio.” </footer>
+</body>
+</html>
