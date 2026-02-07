@@ -46,7 +46,7 @@ body {
     gap: 10px;
 }
 
-.menu button {
+.menu div {
     padding: 10px 15px;
     border: none;
     background: var(--lilla);
@@ -59,7 +59,7 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-.menu button:hover {
+.menu div:hover {
     background: var(--arancione);
 }
 
