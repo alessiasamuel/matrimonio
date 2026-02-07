@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sito Matrimonio – S&A</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- VERSIONE ITALIANA -->
+<div class="top-bar" id="menu-it">
+    <div class="logo">S&A</div>
+
+    <div class="menu">
+        <button onclick="location.href='index.html'">Home</button>
+        <button>Programma</button>
+        <button onclick="location.href='rsvp.html'">RSVP</button>
+        <button>Regalo di Nozze</button>
+
+        <div class="lang-switch" onclick="switchLang('en')">IT | EN</div>
+    </div>
+</div>
+
+<!-- VERSIONE INGLESE -->
+<div class="top-bar" id="menu-en" style="display:none;">
+    <div class="logo">S&A</div>
+
+    <div class="menu">
+        <button onclick="location.href='index.html'">Home</button>
+        <button>Schedule</button>
+        <button onclick="location.href='rsvp.html'">RSVP</button>
+        <button>Wedding Gift</button>
+
+        <div class="lang-switch" onclick="switchLang('it')">EN | IT</div>
+    </div>
+</div>
+
+<!-- Contenuto -->
+<div class="content">
+    <img src="https://via.placeholder.com/800x400" alt="Immagine centrata">
+</div>
+
+<script>
+function switchLang(lang) {
+    document.getElementById("menu-it").style.display = lang === "it" ? "flex" : "none";
+    document.getElementById("menu-en").style.display = lang === "en" ? "flex" : "none";
+}
+</script>
+<footer>
+    “L’amore non consiste nel guardarsi l’un l’altro,  
+    ma nel guardare insieme nella stessa direzione.”  
+    — Antoine de Saint‑Exupéry
+</footer>
+
+</body>
+</html>
