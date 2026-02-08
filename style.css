@@ -161,6 +161,52 @@ body {
     }
 }
 
+/* stile della tab LINGUA */
+.lang-switcher {
+  display: inline-flex;
+  position: relative;
+  background-color: var(--arancione);
+  padding: 5px;
+  border-radius: 50px;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+  font-family: sans-serif;
+}
+
+.lang-btn {
+  border: none;
+  background: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 50px;
+  font-weight: bold;
+  color: var(--arancione);
+  transition: color 0.3s ease;
+  z-index: 2; /* Sopra lo sfondo del tab */
+  position: relative;
+}
+
+.lang-btn.active {
+  color: #fff;
+}
+
+/* Evidenziatore animato */
+.lang-highlight {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  bottom: 5px;
+  width: calc(100% / 2 - 10px); /* Dividi per il numero di lingue */
+  background-color: var(--lilla); /* Colore attivo */
+  border-radius: 50px;
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+/* Posizioni del tab (esempio con 2 lingue) */
+.lang-btn:nth-child(1).active ~ .lang-highlight { transform: translateX(0); }
+.lang-btn:nth-child(2).active ~ .lang-highlight { transform: translateX(100%); }
+
+
 /* FOOTER ELEGANTE */
 footer {
     margin-top: 60px;
