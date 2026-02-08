@@ -1,16 +1,19 @@
-const btn = document.querySelector('.lang-btn');
-const dropdown = document.querySelector('.lang-dropdown');
+const btn = document.querySelectorAll('.lang-btn');
 
-btn.addEventListener('click', () => {
-  const isExpanded = btn.getAttribute('aria-expanded') === 'true';
-  btn.setAttribute('aria-expanded', !isExpanded);
-  dropdown.classList.toggle('active');
+btn.forEach(button => {
+button.addEventListener('click', () => {
+  // Rimuovi active da tutti
+  document.querySelector('.lang-btn.active').classList.remove('active');
+  // Aggiungi active a quello cliccato
+  button.classList.add('active');
+  
+  // Qui andrebbe la logica per cambiare lingua
+  const lang = button.getAttribute('data-lang');
+  document.getElementById("menu-it").style.display = lang === "it" ? "flex" : "none";
+  document.getElementById("menu-en").style.display = lang === "en" ? "flex" : "none";
+  document.getElementById("footer-it").style.display = lang === "it" ? "flex" : "none";
+  document.getElementById("footer-en").style.display = lang === "en" ? "flex" : "none";
+  console.log("Lingua cambiata in: " + lang);
+  // Esempio: window.location.href = '/' + lang;
 });
 
-// Chiude il menu se si clicca fuori
-window.addEventListener('click', (e) => {
-  if (!btn.contains(e.target)) {
-    dropdown.classList.remove('active');
-    btn.setAttribute('aria-expanded', 'false');
-  }
-});
