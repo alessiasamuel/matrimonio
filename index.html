@@ -12,14 +12,17 @@
 <!-- VERSIONE ITALIANA -->
 <div class="top-bar" id="menu-it">
     <div class="logo">S&A</div>
-
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-lang="it">ITA</button>
+      <button class="lang-btn" data-lang="en">ENG</button>
+      <!-- Slider che si muove sotto le opzioni -->
+      <div class="lang-highlight"></div>
+    </div>
     <div class="menu">
         <div onclick="location.href='index.html'">Home</div>
         <div onclick="location.href='programma.html'">Programma</div>
         <div onclick="location.href='RSVP.html'">RSVP</div>
         <div  onclick="location.href='regalo.html'">Regalo di Nozze</div>
-
-        <div class="lang-switch" onclick="switchLang('en')">IT | EN</div>
     </div>
     
 </div>
@@ -32,8 +35,6 @@
         <div onclick="location.href='schedule.html'">Schedule</div>
         <div onclick="location.href='RSVP.html'">RSVP</div>
         <div  onclick="location.href='gift.html'">Wedding Gift</div>
-
-        <div class="lang-switch" onclick="switchLang('en')">IT | EN</div>
     </div>
 </div>
 
@@ -54,15 +55,7 @@
        “Love does not consist in looking at each other, but in looking together in the same direction.”  
         — Antoine de Saint‑Exupéry
 </footer>
-    
-<script>
-function switchLang(lang) {
-    document.getElementById("menu-it").style.display = lang === "it" ? "flex" : "none";
-    document.getElementById("menu-en").style.display = lang === "en" ? "flex" : "none";
-    document.getElementById("footer-it").style.display = lang === "it" ? "flex" : "none";
-    document.getElementById("footer-en").style.display = lang === "en" ? "flex" : "none";
-}
-</script>
+
 
 </body>
 </html>
