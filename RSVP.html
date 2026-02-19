@@ -9,20 +9,50 @@
 
 <body>
 
+<!-- Top Bar -->
 <div class="top-bar">
     <div class="logo">S&A</div>
+    <div class="lang-switcher">
+      <button onclick="" class="lang-btn active" data-lang="it" id="lang-it">ITA</button>
+      <button class="lang-btn" data-lang="en" id="lang-en">ENG</button>
+      <button class="lang-btn" data-lang="zen" id="lang-zen">ZEN</button>
+      
+      <!-- Slider che si muove sotto le opzioni -->
+      <div class="lang-highlight"></div>
+    </div>
+    
+    <!-- VERSIONE ITALIANA -->
+    <div class="menu" id="menu-it" >
+        <div class="menu-btn" onclick="location.href='index.html'">Home</div>
+        <div class="menu-btn" onclick="location.href='programma.html'">Programma</div>
+        <div class="menu-btn active" onclick="location.href='RSVP.html'">RSVP</div>
+        <div class="menu-btn" onclick="location.href='regalo.html'">Regalo di Nozze</div>
+        <div style="background-color: white; cursor: default;"></div>
+    </div>
 
-    <div class="menu">
-        <div onclick="location.href='index.html'">Home</div>
-        <div onclick="location.href='programma.html'">Programma</div>
-        <div onclick="location.href='RSVP.html'">RSVP</div>
-        <div  onclick="location.href='regalo.html'">Regalo di Nozze</div>
+    <!-- VERSIONE INGLESE -->
+    <div class="menu" id="menu-en" style="display:none;">
+        <div class="menu-btn" onclick="location.href='index.html'">Home</div>
+        <div class="menu-btn" onclick="location.href='programma.html'">Schedule</div>
+        <div class="menu-btn active" onclick="location.href='RSVP.html'">RSVP</div>
+        <div class="menu-btn" onclick="location.href='regalo.html'">Wedding Gift</div>
+        <div style="background-color: white;"></div>
 
-        <div class="lang-switch" onclick="switchLang('en')">IT | EN</div>
+    </div>
+
+     <!-- VERSIONE GENOVESE> -->
+    <div class="menu" id="menu-zen" style="display:none;">
+        <div class="menu-btn" onclick="location.href='index.html'">Introduçión</div>
+        <div class="menu-btn" onclick="location.href='programma.html'">Cösa fâ</div>
+        <div class="menu-btn active" onclick="location.href='RSVP.html'">Rispónde</div>
+        <div class="menu-btn"  onclick="location.href='regalo.html'">Regàllo</div>
+        <div style="background-color: white;"></div>
+
     </div>
 </div>
 
-<div class="rsvp-container">
+<!-- VERSIONE ITALIANA> -->
+<div class="rsvp-container" id="rsvp-it">
     <h2>RSVP</h2>
 
    <form id="rsvpForm">
@@ -47,40 +77,88 @@
         <button type="submit">Invia RSVP</button>
     </form>
 
-<div id="rsvpMessage" style="margin-top:20px; font-weight:bold;"></div>
+    <div id="rsvpMessage" style="margin-top:20px; font-weight:bold;"></div>
 
 </div>
-<script>
-const scriptURL = "https://script.google.com/macros/s/AKfycbwxzgPnV9JNrN535OqHqp3sWwcdcd8On1bMrbY8ZQzHzdcAAtUuGRhQvw9BiPubCVVM/exec";
 
-document.getElementById("rsvpForm").addEventListener("submit", function(e) {
-    e.preventDefault();
+<!-- VERSIONE INGLESE> -->
+<div class="rsvp-container" id="rsvp_en" style="display: none;">
+    <h2>RSVP</h2>
 
-    const formData = {
-        nome: this.nome.value,
-        email: this.email.value,
-        presenza: this.presenza.value,
-        accompagnatori: this.accompagnatori.value,
-        note: this.note.value
-    };
+   <form id="rsvpForm">
+        <label>Name and Surname</label>
+        <input type="text" name="nome" required>
+    
+        <label>Email</label>
+        <input type="email" name="email" required>
+    
+        <label>Are you going to join us?</label>
+        <select name="presenza" required>
+            <option value="Si">Yes, I am!</option>
+            <option value="No">No, I'm not</option>
+        </select>
+    
+        <label>Number of companions</label>
+        <input type="number" name="accompagnatori" min="0" value="0">
+    
+        <label>Additional notes</label>
+        <textarea name="note" rows="4"></textarea>
 
-    fetch(scriptURL, {
-        method: "POST",
-        body: JSON.stringify(formData)
-    })
-    .then(res => res.json())
-    .then(() => {
-        document.getElementById("rsvpMessage").innerHTML =
-            "Grazie! La tua conferma è stata registrata.";
-        document.getElementById("rsvpForm").reset();
-    })
-    .catch(err => {
-        document.getElementById("rsvpMessage").innerHTML =
-            "Si è verificato un errore. Riprova più tardi.";
-    });
-});
-</script>
+        <button type="submit">Send RSVP</button>
+    </form>
 
-<footer> “Il vero amore inizia quando non ci si aspetta nulla in cambio.” </footer>
+    <div id="rsvpMessage" style="margin-top:20px; font-weight:bold;"></div>
+
+</div>
+
+
+<!-- VERSIONE ZENEISE> -->
+<div class="rsvp-container" id="rsvp_zen" style="display: none;">
+    <h2>RSVP</h2>
+
+   <form id="rsvpForm">
+        <label>Nome e Cognome</label>
+        <input type="text" name="nome" required>
+    
+        <label>Email</label>
+        <input type="email" name="email" required>
+    
+        <label>Parteciperai?</label>
+        <select name="presenza" required>
+            <option value="Si">Sì, sarò presente</option>
+            <option value="No">No, non posso venire</option>
+        </select>
+    
+        <label>Numero di accompagnatori</label>
+        <input type="number" name="accompagnatori" min="0" value="0">
+    
+        <label>Note aggiuntive</label>
+        <textarea name="note" rows="4"></textarea>
+
+        <button type="submit">Invia RSVP</button>
+    </form>
+
+    <div id="rsvpMessage" style="margin-top:20px; font-weight:bold;"></div>
+
+</div>
+
+
+<!-- VERSIONE ITALIANA> -->
+<footer id="footer-it"> 
+    “Il vero amore inizia quando non ci si aspetta nulla in cambio.” 
+</footer>
+
+<!-- VERSIONE INGLESE> -->
+<footer id="footer-en" style="display: none;"> 
+    “True love begins when you expect nothing in return.” 
+</footer>
+
+<!-- VERSIONE ZENEISE> -->
+<footer id="footer-en" style="display: none;"> 
+    “Il vero amore inizia quando non ci si aspetta nulla in cambio.” 
+</footer>
+
+<script src="script.js"></script>
+
 </body>
 </html>

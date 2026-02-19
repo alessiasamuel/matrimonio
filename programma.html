@@ -9,20 +9,50 @@
 
 <body>
 
+<!-- Top Bar -->
 <div class="top-bar">
     <div class="logo">S&A</div>
+    <div class="lang-switcher">
+      <button onclick="" class="lang-btn" data-lang="it" id="lang-it">ITA</button>
+      <button class="lang-btn" data-lang="en" id="lang-en">ENG</button>
+      <button class="lang-btn" data-lang="zen" id="lang-zen">ZEN</button>
+      
+      <!-- Slider che si muove sotto le opzioni -->
+      <div class="lang-highlight"></div>
+    </div>
+    
+    <!-- VERSIONE ITALIANA -->
+    <div class="menu" id="menu-it" >
+        <div class="menu-btn" id ='index'>Home</div>
+        <div class="menu-btn active" id ='programma'>Programma</div>
+        <div class="menu-btn" id ='rsvp'>RSVP</div>
+        <div class="menu-btn" id ='regalo'>Regalo di Nozze</div>
+        <div style="background-color: white; cursor: default;"></div>
+    </div>
 
-   <div class="menu">
-        <div onclick="location.href='index.html'">Home</div>
-        <div onclick="location.href='programma.html'">Programma</div>
-        <div onclick="location.href='RSVP.html'">RSVP</div>
-        <div  onclick="location.href='regalo.html'">Regalo di Nozze</div>
+    <!-- VERSIONE INGLESE -->
+    <div class="menu" id="menu-en" style="display:none;">
+        <div class="menu-btn" id ='index'>Home</div>
+        <div class="menu-btn active" id ='programma'>Schedule</div>
+        <div class="menu-btn" id ='rsvp' >RSVP</div>
+        <div class="menu-btn" id ='regalo'>Wedding Gift</div>
+        <div style="background-color: white;"></div>
 
-        <div class="lang-switch" onclick="switchLang('en')">IT | EN</div>
+    </div>
+
+     <!-- VERSIONE GENOVESE> -->
+    <div class="menu" id="menu-zen" style="display:none;">
+        <div class="menu-btn" id ='index'>Introduçión</div>
+        <div class="menu-btn active" id ='programma'>Cösa fâ</div>
+        <div class="menu-btn" id ='rsvp' >Rispónde</div>
+        <div class="menu-btn" id ='regalo'>Regàllo</div>
+        <div style="background-color: white;"></div>
+
     </div>
 </div>
 
-<div class="timeline">
+<!-- VERSIONE ITALIANA -->
+<div class="timeline" id="timeline-it">
     <div class="timeline-item">
         <h3>16:00 – Cerimonia</h3>
         <p>La cerimonia si terrà nella Chiesa di San Pier di Canne.</p>
@@ -54,9 +84,88 @@
     </div>
 </div>
 
-<footer>
+<!-- VERSIONE INGLESE -->
+<div class="timeline" id="timeline-en" style="display:none;">
+    <div class="timeline-item">
+        <h3>4:00 PM – Ceremony</h3>
+        <p>The ceremony will take place in the Church of San Pier di Canne.</p>
+    </div>
+
+    <div class="timeline-item">
+        <h3>5:00 PM – Cheers</h3>
+        <p>A friendly moment in the square open to everyone!</p>
+    </div>
+    
+    <div class="timeline-item">
+        <h3>6:00 PM – Aperitif</h3>
+        <p>A convivial moment at La Novellina (Cicagna).</p>
+    </div>
+
+    <div class="timeline-item">
+        <h3>7:00 PM – Dinner</h3>
+        <p>A special menu prepared for our celebration.</p>
+    </div>
+
+    <div class="timeline-item">
+        <h3>10:00 PM – Cake Cutting</h3>
+        <p>The sweetest moment of the evening.</p>
+    </div>
+
+    <div class="timeline-item">
+        <h3>11:00 PM – Party</h3>
+        <p>Music, dancing, and fun until late, accompanied by Le bimbe di Erode.</p>
+    </div>
+</div>
+
+<!-- VERSIONE ZENEISE -->
+<div class="timeline" id="timeline-zen" style="display:none;">
+    <div class="timeline-item">
+        <h3>4:00 PM – Ceremony</h3>
+        <p>The ceremony will take place in the Church of San Pier di Canne.</p>
+    </div>
+
+    <div class="timeline-item">
+        <h3>5:00 PM – Cheers</h3>
+        <p>A friendly moment in the square open to everyone!</p>
+    </div>
+    
+    <div class="timeline-item">
+        <h3>6:00 PM – Aperitif</h3>
+        <p>A convivial moment at La Novellina (Cicagna).</p>
+    </div>
+
+    <div class="timeline-item">
+        <h3>7:00 PM – Dinner</h3>
+        <p>A special menu prepared for our celebration.</p>
+    </div>
+
+    <div class="timeline-item">
+        <h3>10:00 PM – Cake Cutting</h3>
+        <p>The sweetest moment of the evening.</p>
+    </div>
+
+    <div class="timeline-item">
+        <h3>11:00 PM – Party</h3>
+        <p>Music, dancing, and fun until late, accompanied by Le bimbe di Erode.</p>
+    </div>
+</div>
+
+<!-- VERSIONE ITALIANA -->
+<footer id="footer-it">
     “L’amore è la poesia dei sensi.” — Honoré de Balzac
 </footer>
+
+<!-- VERSIONE INGLESE -->
+<footer id="footer-en" style="display:none;">
+    “Love is composed of a single soul inhabiting two bodies.” — Aristotle
+</footer>
+
+<!-- VERSIONE ZENEISE -->
+<footer id="footer-zen" style="display:none;">
+    “Love is composed of a single soul inhabiting two bodies.” — Aristotle
+</footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>

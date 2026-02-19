@@ -8,39 +8,63 @@
 </head>
 
 <body>
-
-<!-- VERSIONE ITALIANA -->
-<div class="top-bar" id="menu-it">
+<!-- Top Bar -->
+<div class="top-bar">
     <div class="logo">S&A</div>
     <div class="lang-switcher">
-      <button class="lang-btn active" data-lang="it">ITA</button>
-      <button class="lang-btn" data-lang="en">ENG</button>
+      <button onclick="" class="lang-btn" data-lang="it" id="lang-it">ITA</button>
+      <button class="lang-btn" data-lang="en" id="lang-en">ENG</button>
+      <button class="lang-btn" data-lang="zen" id="lang-zen">ZEN</button>
+      
       <!-- Slider che si muove sotto le opzioni -->
       <div class="lang-highlight"></div>
     </div>
-    <div class="menu">
-        <div onclick="location.href='index.html'">Home</div>
-        <div onclick="location.href='programma.html'">Programma</div>
-        <div onclick="location.href='RSVP.html'">RSVP</div>
-        <div  onclick="location.href='regalo.html'">Regalo di Nozze</div>
-    </div>
     
-</div>
+    <!-- VERSIONE ITALIANA -->
+    <div class="menu" id="menu-it" >
+        <div class="menu-btn active" id ='index'>Home</div>
+        <div class="menu-btn" id ='programma'>Programma</div>
+        <div class="menu-btn" id ='rsvp'>RSVP</div>
+        <div class="menu-btn" id ='regalo'>Regalo di Nozze</div>
+        <div style="background-color: white; cursor: default;"></div>
+    </div>
 
-<!-- VERSIONE INGLESE -->
-<div class="top-bar" id="menu-en" style="display:none;">
-    <div class="logo">S&A</div>
-    <div class="menu">
-        <div onclick="location.href='index.html'">Home</div>
-        <div onclick="location.href='schedule.html'">Schedule</div>
-        <div onclick="location.href='RSVP.html'">RSVP</div>
-        <div  onclick="location.href='gift.html'">Wedding Gift</div>
+    <!-- VERSIONE INGLESE -->
+    <div class="menu" id="menu-en" style="display:none;">
+        <div class="menu-btn active"id ='index'>Home</div>
+        <div class="menu-btn" id="programma">Schedule</div>
+        <div class="menu-btn" id="rsvp">RSVP</div>
+        <div class="menu-btn" id="regalo">Wedding Gift</div>
+        <div style="background-color: white;"></div>
+
+    </div>
+
+     <!-- VERSIONE GENOVESE> -->
+    <div class="menu" id="menu-zen" style="display:none;">
+        <div class="menu-btn active" id ='index'>Introduçión</div>
+        <div class="menu-btn" id ='programma'>Cösa fâ</div>
+        <div class="menu-btn" id="rsvp">Rispónde</div>
+        <div class="menu-btn"  id="regalo">Regàllo</div>
+        <div style="background-color: white;"></div>
+
     </div>
 </div>
 
-<!-- Contenuto -->
 <div class="content">
     <img src="https://via.placeholder.com/800x400" alt="Immagine centrata">
+</div>
+
+<div class="gallery-container">
+    <h2>Galleria Fotografica</h2>
+
+    <div class="gallery-grid">
+        <img src="https://via.placeholder.com/400x300" alt="">
+        <img src="https://via.placeholder.com/400x300" alt="">
+        <img src="https://via.placeholder.com/400x300" alt="">
+        <img src="https://via.placeholder.com/400x300" alt="">
+        <img src="https://via.placeholder.com/400x300" alt="">
+        <img src="https://via.placeholder.com/400x300" alt="">
+    </div>
 </div>
 
 <!-- VERSIONE ITALIANA -->
@@ -56,6 +80,7 @@
         — Antoine de Saint‑Exupéry
 </footer>
 
+<script src="script.js"></script>
 
 </body>
 </html>

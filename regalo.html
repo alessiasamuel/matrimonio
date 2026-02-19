@@ -9,20 +9,50 @@
 
 <body>
 
+<!-- Top Bar -->
 <div class="top-bar">
     <div class="logo">S&A</div>
+    <div class="lang-switcher">
+      <button onclick="" class="lang-btn active" data-lang="it" id="lang-it">ITA</button>
+      <button class="lang-btn" data-lang="en" id="lang-en">ENG</button>
+      <button class="lang-btn" data-lang="zen" id="lang-zen">ZEN</button>
+      
+      <!-- Slider che si muove sotto le opzioni -->
+      <div class="lang-highlight"></div>
+    </div>
+    
+    <!-- VERSIONE ITALIANA -->
+    <div class="menu" id="menu-it" >
+        <div class="menu-btn" onclick="location.href='index.html'">Home</div>
+        <div class="menu-btn" onclick="location.href='programma.html'">Programma</div>
+        <div class="menu-btn" onclick="location.href='RSVP.html'">RSVP</div>
+        <div class="menu-btn active" onclick="location.href='regalo.html'">Regalo di Nozze</div>
+        <div style="background-color: white; cursor: default;"></div>
+    </div>
 
-    <div class="menu">
-        <div onclick="location.href='index.html'">Home</div>
-        <div onclick="location.href='programma.html'">Programma</div>
-        <div onclick="location.href='RSVP.html'">RSVP</div>
-        <div  onclick="location.href='regalo.html'">Regalo di Nozze</div>
+    <!-- VERSIONE INGLESE -->
+    <div class="menu" id="menu-en" style="display:none;">
+        <div class="menu-btn" onclick="location.href='index.html'">Home</div>
+        <div class="menu-btn" onclick="location.href='programma.html'">Schedule</div>
+        <div class="menu-btn" onclick="location.href='RSVP.html'">RSVP</div>
+        <div class="menu-btn active" onclick="location.href='regalo.html'">Wedding Gift</div>
+        <div style="background-color: white;"></div>
 
-        <div class="lang-switch" onclick="switchLang('en')">IT | EN</div>
+    </div>
+
+     <!-- VERSIONE GENOVESE> -->
+    <div class="menu" id="menu-zen" style="display:none;">
+        <div class="menu-btn" onclick="location.href='index.html'">Introduçión</div>
+        <div class="menu-btn" onclick="location.href='programma.html'">Cösa fâ</div>
+        <div class="menu-btn" onclick="location.href='RSVP.html'">Rispónde</div>
+        <div class="menu-btn active"  onclick="location.href='regalo.html'">Regàllo</div>
+        <div style="background-color: white;"></div>
+
     </div>
 </div>
 
-<div class="rsvp-container">
+<!-- VERSIONE ITALIANA> -->
+<div class="rsvp-container" id="regalo-it">
     <h2>Regalo di Nozze</h2>
     <p>La vostra presenza è il dono più grande.  
        Se desiderate contribuire al nostro futuro insieme,  
@@ -37,10 +67,54 @@
     </p>
 </div>
 
-<footer>
+<!-- VERSIONE INGLESE> -->
+<div class="rsvp-container" id="regalo-en" style="display:none;">
+    <h2>Wedding Gift</h2>
+    <p>Your presence is the greatest gift.  
+       If you wish to contribute to our future together,  
+       you may use the following IBAN:</p>
+
+    <h3 style="color: var(--arancione); margin-top:20px;">
+        IBAN: IT00 X000 0000 0000 0000 0000 000
+    </h3>
+
+    <p style="margin-top:20px;">
+        Thank you from the bottom of our hearts.
+    </p>
+</div>
+
+<!-- VERSIONE ZENEISE> -->
+<div class="rsvp-container" id="regalo-zen" style="display:none;">
+    <h2>Wedding Gift</h2>
+    <p>Your presence is the greatest gift.  
+       If you wish to contribute to our future together,  
+       you may use the following IBAN:</p>
+
+    <h3 style="color: var(--arancione); margin-top:20px;">
+        IBAN: IT00 X000 0000 0000 0000 0000 000
+    </h3>
+
+    <p style="margin-top:20px;">
+        Thank you from the bottom of our hearts.
+    </p>
+</div>
+
+<!-- VERSIONE ITALIANA> -->
+<footer id="footer-it">
     “Amare non è guardarsi a vicenda,  
     ma guardare insieme nella stessa direzione.”
 </footer>
+
+<!-- VERSIONE INGLESE> -->
+<footer id="footer-en" style="display:none;">
+    “Whatever our souls are made of, his and mine are the same.” — Emily Brontë
+</footer>
+
+<!-- VERSIONE ZENEISE> -->
+<footer id="footer-zen" style="display:none;">
+    “Whatever our souls are made of, his and mine are the same.” — Emily Brontë
+</footer>
+<script src="script.js"></script>
 
 </body>
 </html>
